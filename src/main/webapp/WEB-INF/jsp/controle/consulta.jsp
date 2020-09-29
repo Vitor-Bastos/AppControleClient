@@ -20,7 +20,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 	
-		<h3>Controle: ${operacao}</h3>
+		<h2>Controle: ${operacao}</h2>
 	
 	    <div class="form-group">
 	      <label for="usr">Solicitante:</label>
@@ -35,7 +35,7 @@
 		<div class="form-group">
 			<label for="usr">Remedios:</label>
 
-			<table class="table table-striped">
+			<table class="table table-hover">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -43,15 +43,18 @@
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="p" items="${controle.remedios}">
+			    	<c:forEach var="r" items="${controle.remedios}">
 				      <tr>
-				        <td>${p.id}</td>
-				        <td>${p}</td>
+				        <td>${r.id}</td>
+				        <td>${r}</td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 			</table>	
 		</div>	
 	</div>
+	
+<c:import url="/WEB-INF/jsp/footer.jsp"/>	
+	
 </body>
 </html>

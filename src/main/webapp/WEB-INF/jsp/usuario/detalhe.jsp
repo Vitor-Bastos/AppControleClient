@@ -37,10 +37,10 @@
 			    <input type="password" class="form-control" name="senha">
 			  </div>
 			
-			  <button type="submit" class="btn btn-primary">Cadastrar</button>
+			  <button type="submit" class="Btn btn-info btn-lg">Cadastrar</button>
 			</form>
   		</div>
 	</div>
-
+<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

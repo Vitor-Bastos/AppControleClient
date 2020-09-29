@@ -18,13 +18,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 
-		<div class="dropdown">
-		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-		      Insulinas
-		    </button>
-		    <div class="dropdown-menu">
-		      <a class="dropdown-item" href="/insulina">Novo</a>
-		    </div>
+		<a href="/insulina" type="button" class="btn btn-light btn-outline-info btn-lg" role="button">Adicionar Insulina</a>
 		  </div>	
 		<br>
 		
@@ -35,7 +29,7 @@
 		</c:if>
 		
 		<c:if test="${not empty insulinas}">
-			<table class="table table-striped">
+			<table class="table table-hover">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -48,21 +42,21 @@
 			    <tbody>
 			    	<c:forEach var="i" items="${insulinas}">
 				      <tr>
-				        <td>${g.id}</td>
-				        <td>${g.descricao}</td>
-				        <td>${g.dosagem}</td>
-				        <td><a href="/insulina/${g.id}/excluir">excluir</a></td>
-				        <td><a href="/insulina/${g.id}/alterar">alterar</a></td>
+				        <td>${i.id}</td>
+				        <td>${i.descricao}</td>
+				        <td>${i.dosagem}</td>
+				        <td><a href="/insulina/${i.id}/excluir">Excluir</a></td>
+				        <td><a href="/insulina/${i.id}/alterar">Alterar</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 			</table>	
 		</c:if>
 		<c:if test="${empty insulinas}">
-			<div class="alert alert-warning">
-				<strong>Sem registros cadastrados!!</strong>
+			<div class="alert alert-danger">
+				<strong>Não possui informações cadastradas</strong>
 			</div>
 		</c:if>
-	</div>
+<c:import url="/WEB-INF/jsp/footer.jsp"/>	
 </body>
 </html>

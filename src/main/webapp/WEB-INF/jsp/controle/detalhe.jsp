@@ -20,7 +20,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 	
-		<h3>Controle: ${operacao}</h3>
+		<h2>Controle: ${operacao}</h2>
 	
 		<form action="/controle/incluir" method="post">
 		
@@ -50,7 +50,7 @@
 					</div>
 				</c:if>
 				<c:if test="${empty remedios}">
-				<label for="usr">Nenhum remedio cadastrado!</label>
+				<label for="usr">Nenhum remédio cadastrado!</label>
 				</c:if>
 			</div>
 	
@@ -59,8 +59,10 @@
 		</c:if>
 		
 	
-	    <button ${disabled} type="submit" class="btn btn-primary">Gravar</button>
+	    <button ${disabled} type="submit" class="btn btn-info btn-lg">Cadastrar</button>
 	  </form>
 	</div>
+	
+<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

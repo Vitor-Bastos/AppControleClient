@@ -19,9 +19,11 @@
 <body>
 
 	<div class="container">
-		   
+	
+		<img src="https://image.freepik.com/free-vector/pharmacy-medications-medicine-drugs-pharmaceutical-treatment-vitamins-blister-packs-medicine-pills-bottles-illustration-icons-set-treatment-pharmaceutical-medication-vitamin_229548-572.jpg"><br>  
+		<br>
 		<h1>AppControle</h1>
-		<p>Sistema para controle de remédios</p>
+		<h2>Sistema para controle de remédios</h2><br>
 
 		<c:if test="${not empty mensagem}">
 			<div class="alert alert-warning">
@@ -31,27 +33,33 @@
 		<form action="login" class="was-validated" method="post">
 			<div class="form-group">
 				<label for="uname">Login:</label> <input type="text"
-					class="form-control" placeholder="Entre com o login"
+					class="form-control" placeholder="Entre com o seu login"
 					name="username" required>
-				<div class="valid-feedback">ok</div>
-				<div class="invalid-feedback">Por favor, preencha o campo!</div>
+				<div class="valid-feedback">OK</div>
+				<div class="invalid-feedback">Preencher o campo obrigatório</div>
 			</div>
 			<div class="form-group">
 				<label for="pwd">Senha:</label> <input type="password"
-					class="form-control" placeholder="Entre com a senha"
+					class="form-control" placeholder="Entre com a sua senha"
 					name="password" required>
-				<div class="valid-feedback">ok</div>
-				<div class="invalid-feedback">Por favor, preencha o campo!</div>
+				<div class="valid-feedback">OK</div>
+				<div class="invalid-feedback">Preencher o campo obrigatório</div>
 			</div>
-
-			<button type="submit" class="btn btn-primary">Acessar</button>
+			
+			<div class="form-check">
+    			<input type="checkbox" class="form-check-input" id="gridCheck">
+    			<label class="form-check-label" for="gridCheck">Lembrar seu login</label>
+  			</div><br>
+  			
+			<button type="submit" class="btn btn-info btn-lg btn-outline-dark btn-block">Acessar</button>
 		</form>
 
-		<div class="d-flex justify-content-center align-items-center mt-4">
-			<span class="font-weight-normal"> Não registrado? <a
-				href="/user" class="font-weight-bold">Novo usuário</a>
+		<div class="d-flex justify-content-center align-items-center mt-1">
+			<span class="font-weight-normal"> <a
+				href="/user" class="font-weight-bold">Cadastrar Usuário</a>
 			</span>
 		</div>
 	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

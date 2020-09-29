@@ -18,13 +18,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 
-		<div class="dropdown">
-		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-		      Penicilinas
-		    </button>
-		    <div class="dropdown-menu">
-		      <a class="dropdown-item" href="/penicilina">Novo</a>
-		    </div>
+		<a href="/penicilina" type="button" class="btn btn-light btn-outline-info btn-lg" role="button">Adicionar Penicilina</a>
 		  </div>	
 		<br>
 		
@@ -35,12 +29,12 @@
 		</c:if>
 		
 		<c:if test="${not empty penicilinas}">
-			<table class="table table-striped">
+			<table class="table table-hover">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
 			        <th>DESCRIÇÃO</th>
-			        <th>EDITORA</th>
+			        <th>TRATAMENTO</th>
 			        <th></th>
 			        <th></th>
 			      </tr>
@@ -48,21 +42,21 @@
 			    <tbody>
 			    	<c:forEach var="p" items="${penicilinas}">
 				      <tr>
-				        <td>${r.id}</td>
-				        <td>${r.descricao}</td>
-				        <td>${r.tratamento}</td>
-				        <td><a href="/penicilina/${r.id}/excluir">excluir</a></td>
-				        <td><a href="/penicilina/${r.id}/alterar">alterar</a></td>
+				        <td>${p.id}</td>
+				        <td>${p.descricao}</td>
+				        <td>${p.tratamento}</td>
+				        <td><a href="/penicilina/${p.id}/excluir">Excluir</a></td>
+				        <td><a href="/penicilina/${p.id}/alterar">Alterar</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 			</table>	
 		</c:if>
 		<c:if test="${empty penicilinas}">
-			<div class="alert alert-warning">
-				<strong>Sem registros cadastrados!!</strong>
+			<div class="alert alert-danger">
+				<strong>Não possui informações cadastradas</strong>
 			</div>
 		</c:if>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

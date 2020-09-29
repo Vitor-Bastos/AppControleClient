@@ -19,9 +19,10 @@
 		</div>			
 
 		<div class="alert alert-danger">
-		  <strong>Acesso negado!!</strong>
-		  <h5>Apenas usuários com o perfil de <strong>administrador</strong> poderão acessar esta funcionalidade!!!</h5>
+		  <strong>O seu acesso foi negado</strong>
+		  <h5>Apenas usuários com o perfil de <strong>administrador</strong> poderão ter acesso</h5>
 		</div>		
 	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

@@ -20,7 +20,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 	
-		<h3>Insulinas: ${operacao}</h3>
+		<h2>Insulinas: ${operacao}</h2>
 	
 		<form action="/insulina/incluir" method="post">
 			<input type="hidden" name="id" value="${insulina.id}">
@@ -37,8 +37,9 @@
 		      <input type="text" class="form-control" name="dosagem" value="${insulina.dosagem}">
 		    </div>
 
-	    	<button type="submit" class="btn btn-primary">Gravar</button>
+	    	<button type="submit" class="btn btn-info btn-lg">Cadastrar</button>
 	  	</form>
 	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

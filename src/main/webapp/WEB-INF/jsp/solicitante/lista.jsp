@@ -18,13 +18,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 
-		<div class="dropdown">
-		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-		      Solicitantes
-		    </button>
-		    <div class="dropdown-menu">
-		      <a class="dropdown-item" href="/solicitante">Novo</a>
-		    </div>
+		<a href="/solicitante" type="button" class="btn btn-light btn-outline-info btn-lg" role="button">Adicionar Solicitante</a>
 		  </div>	
 		<br>
 		
@@ -35,7 +29,7 @@
 		</c:if>
 
 		<c:if test="${not empty solicitantes}">
-			<table class="table table-striped">
+			<table class="table table-hover">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -49,18 +43,18 @@
 				      <tr>
 				        <td>${s.id}</td>
 				        <td>${s.nome}</td>
-				        <td><a href="/solicitante/${s.id}/excluir">excluir</a></td>
-				        <td><a href="/solicitante/${s.id}/alterar">alterar</a></td>
+				        <td><a href="/solicitante/${s.id}/excluir">Excluir</a></td>
+				        <td><a href="/solicitante/${s.id}/alterar">Alterar</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 			</table>	
 		</c:if>
 		<c:if test="${empty solicitantes}">
-			<div class="alert alert-warning">
-				<strong>Sem registros cadastrados!!</strong>
+			<div class="alert alert-danger">
+				<strong>Não possui informações cadastradas</strong>
 			</div>
 		</c:if>
-	</div>
+<c:import url="/WEB-INF/jsp/footer.jsp"/>	
 </body>
 </html>

@@ -20,7 +20,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 	
-		<h3>Penicilinas: ${operacao}</h3>
+		<h2>Penicilinas: ${operacao}</h2>
 	
 		<form action="/penicilina/incluir" method="post">
 			<input type="hidden" name="id" value="${penicilina.id}">
@@ -35,8 +35,9 @@
 		      <input type="text" class="form-control" name="tratamento" value="${penicilina.tratamento}">
 		    </div>
 
-	    	<button type="submit" class="btn btn-primary">Gravar</button>
+	    	<button type="submit" class="btn btn-info btn-lg">Cadastrar</button>
 	  	</form>
 	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

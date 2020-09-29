@@ -18,9 +18,9 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 
-		<div class="dropdown">
-		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-		      Remedios
+		<div class="btn-group dropleft">
+		    <button type="button" class="btn btn-light btn-outline-info btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		      Adicionar Remédio
 		    </button>
 		    <div class="dropdown-menu">
 		      <a class="dropdown-item" href="/insulina">Insulina</a>
@@ -37,7 +37,7 @@
 		</c:if>
 		
 		<c:if test="${not empty remedios}">
-			<table class="table table-striped">
+			<table class="table table-hover">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -46,21 +46,22 @@
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="p" items="${remedios}">
+			    	<c:forEach var="r" items="${remedios}">
 				      <tr>
-				        <td>${p.id}</td>
-				        <td>${p}</td>
-				        <td><a href="/remedio/${p.id}/excluir">excluir</a></td>
+				        <td>${r.id}</td>
+				        <td>${r}</td>
+				        <td><a href="/remedio/${r.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 			</table>	
 		</c:if>
 		<c:if test="${empty remedios}">
-			<div class="alert alert-warning">
-				<strong>Sem registros cadastrados!!</strong>
+			<div class="alert alert-danger">
+				<strong>Não possui informações cadastradas</strong>
 			</div>
 		</c:if>
 	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

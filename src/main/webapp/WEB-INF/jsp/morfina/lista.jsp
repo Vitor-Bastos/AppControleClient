@@ -18,13 +18,7 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 
-		<div class="dropdown">
-		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-		      Morfinas
-		    </button>
-		    <div class="dropdown-menu">
-		      <a class="dropdown-item" href="/morfina">Novo</a>
-		    </div>
+		<a href="/morfina" type="button" class="btn btn-light btn-outline-info btn-lg" role="button">Adicionar Morfina</a>
 		  </div>	
 		<br>
 
@@ -35,12 +29,12 @@
 		</c:if>
 		
 		<c:if test="${not empty morfinas}">
-			<table class="table table-striped">
+			<table class="table table-hover">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
 			        <th>DESCRIÇÃO</th>
-			        <th>AUTOR</th>
+			        <th>TIPO</th>
 			        <th></th>
 			        <th></th>
 			      </tr>
@@ -48,21 +42,21 @@
 			    <tbody>
 			    	<c:forEach var="m" items="${morfinas}">
 				      <tr>
-				        <td>${l.id}</td>
-				        <td>${l.descricao}</td>
-				        <td>${l.tipo}</td>
-				        <td><a href="/morfina/${l.id}/excluir">excluir</a></td>
-				        <td><a href="/morfina/${l.id}/alterar">alterar</a></td>
+				        <td>${m.id}</td>
+				        <td>${m.descricao}</td>
+				        <td>${m.tipo}</td>
+				        <td><a href="/morfina/${m.id}/excluir">Excluir</a></td>
+				        <td><a href="/morfina/${m.id}/alterar">Alterar</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 			</table>	
 		</c:if>
 		<c:if test="${empty morfinas}">
-			<div class="alert alert-warning">
-				<strong>Sem registros cadastrados!!</strong>
+			<div class="alert alert-danger">
+				<strong>Não possui informações cadastradas</strong>
 			</div>
 		</c:if>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>

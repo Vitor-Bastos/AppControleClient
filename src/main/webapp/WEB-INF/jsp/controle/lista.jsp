@@ -18,13 +18,8 @@
 			<c:import url="/WEB-INF/jsp/header.jsp"/>
 		</div>			
 
-		<div class="dropdown">
-		    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-		      Controle
-		    </button>
-		    <div class="dropdown-menu">
-		      <a class="dropdown-item" href="/controle">Novo</a>
-		    </div>
+		   <a href="/controle" type="button" class="btn btn-light btn-outline-info btn-lg" role="button">Adicionar Controle</a>
+		  
 		  </div>	
 		<br>
 
@@ -35,7 +30,7 @@
 		</c:if>
 
 		<c:if test="${not empty controles}">
-			<table class="table table-striped">
+			<table class="table table-hover">
 			    <thead>
 			      <tr>
 			        <th>ID</th>
@@ -47,24 +42,24 @@
 			      </tr>
 			    </thead>
 			    <tbody>
-			    	<c:forEach var="e" items="${controles}">
+			    	<c:forEach var="c" items="${controles}">
 				      <tr>
-				        <td>${e.id}</td>
-				        <td>${e.descricao}</td>
-				        <td>${e.solicitante.nome}</td>
-				        <td>${e.remedios.size()}</td>
-				        <td><a href="/controle/${e.id}/consultar">consultar</a></td>
-				        <td><a href="/controle/${e.id}/excluir">excluir</a></td>
+				        <td>${c.id}</td>
+				        <td>${c.descricao}</td>
+				        <td>${c.solicitante.nome}</td>
+				        <td>${c.remedios.size()}</td>
+				        <td><a href="/controle/${c.id}/consultar">Consultar</a></td>
+				        <td><a href="/controle/${c.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>
 			    </tbody>
 			</table>	
 		</c:if>
 		<c:if test="${empty controles}">
-			<div class="alert alert-warning">
-				<strong>Sem registros cadastrados!!</strong>
+			<div class="alert alert-danger">
+				<strong>Não possui informações cadastradas</strong>
 			</div>
 		</c:if>
-	</div>
+	<c:import url="/WEB-INF/jsp/footer.jsp"/>
 </body>
 </html>
